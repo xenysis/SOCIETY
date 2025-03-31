@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Activities - Vinayak Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light-mode">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bold text-primary me-2">Vinayak</span> Club
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        
+                        <a class="nav-link" href="index.html#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#leaders">Our Leaders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#donors">Donors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="activities.html">Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button id="theme-toggle" class="btn btn-sm me-3">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Activities Hero Section -->
+    <div class="hero-section" style="height: 40vh;">
+        <div class="container h-100 d-flex align-items-center">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1>Our Activities</h1>
+                    <p class="lead">Discover the various initiatives and events we organize to serve our community</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activities Section -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Activity 1 -->
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <div class="activity-gallery">
+                        <div id="activity1Carousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://source.unsplash.com/800x600/?charity,education" class="d-block w-100" alt="Education Support">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://source.unsplash.com/800x600/?education,help" class="d-block w-100" alt="Education Support 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://source.unsplash.com/800x600/?education,community" class="d-block w-100" alt="Education Support 3">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#activity1Carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#activity1Carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="activity-content">
+                        <h2>Education Support Program</h2>
+                        <p class="lead">Providing educational resources and support to underprivileged children</p>
+                        <p>Our education support program focuses on:</p>
+                        <ul>
+                            <li>Providing school supplies and uniforms</li>
+                            <li>Organizing tutoring sessions</li>
+                            <li>Computer literacy training</li>
+                            <li>Career counseling workshops</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity 2 -->
+            <div class="row mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="activity-gallery">
+                        <div id="activity2Carousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://source.unsplash.com/800x600/?healthcare,medical" class="d-block w-100" alt="Health Camp">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://source.unsplash.com/800x600/?medical,health" class="d-block w-100" alt="Health Camp 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://source.unsplash.com/800x600/?healthcare,community" class="d-block w-100" alt="Health Camp 3">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#activity2Carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#activity2Carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="activity-content">
+                        <h2>Health Camps</h2>
+                        <p class="lead">Organizing free medical camps and health awareness programs</p>
+                        <p>Our health camps provide:</p>
+                        <ul>
+                            <li>Free medical check-ups</li>
+                            <li>Basic health screenings</li>
+                            <li>Health awareness workshops</li>
+                            <li>Distribution of essential medicines</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity 3 -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="activity-gallery">
+                        <div id="activity3Carousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://source.unsplash.com/800x600/?food,donation" class="d-block w-100" alt="Food Distribution">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://source.unsplash.com/800x600/?food,help" class="d-block w-100" alt="Food Distribution 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://source.unsplash.com/800x600/?food,community" class="d-block w-100" alt="Food Distribution 3">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#activity3Carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#activity3Carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="activity-content">
+                        <h2>Food Distribution Drive</h2>
+                        <p class="lead">Providing food and essential supplies to those in need</p>
+                        <p>Our food distribution program includes:</p>
+                        <ul>
+                            <li>Regular food distribution camps</li>
+                            <li>Emergency food relief</li>
+                            <li>Nutrition awareness programs</li>
+                            <li>Community kitchen initiatives</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Vinayak Club</h5>
+                    <p>A registered society dedicated to community service and social welfare.</p>
+                    <p>Registration No: VCR-12345-2020</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Contact Information</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 123 Main Street, City, State - 123456</p>
+                    <p><i class="fas fa-phone me-2"></i> +91 9876543200</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@vinayakclub.org</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Vinayak Club. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html> 

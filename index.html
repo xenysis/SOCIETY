@@ -1,0 +1,5007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinayak Club - Official Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        /* Hero Section Styles */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            color: rgb(12, 228, 84);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 0;
+        }
+        
+        .hero-section .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Hero text styles for all devices */
+        .hero-text {
+            margin-bottom: 2rem;
+        }
+        
+        .hero-text .hero-line {
+            font-size: 8rem;
+            font-weight: 800;
+            margin: 0.5rem 0;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-text .hero-line:nth-child(3) {
+            color: #ffd700;
+        }
+
+        /* ... existing code ... */
+    </style>
+    <style>
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 576px) {
+            /* Hide Ganesh Puja section in mobile view - very aggressively */
+            #ganeshpuja, 
+            #ganeshpuja * {
+                display: none !important;
+                visibility: hidden !important;
+                height: 0 !important;
+                width: 0 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+                clip: rect(0, 0, 0, 0) !important;
+                white-space: nowrap !important;
+                border: 0 !important;
+                position: absolute !important;
+                z-index: -9999 !important;
+            }
+            
+            /* Mobile social icons styling */
+            .mobile-icons {
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+            }
+            
+            .mobile-icons .nav-link {
+                padding: 0.4rem 0.5rem;
+                color: #4e73df;
+                font-size: 1.2rem;
+                transition: all 0.3s ease;
+            }
+            
+            .mobile-icons .nav-link:hover {
+                color: #2e59d9;
+                transform: translateY(-2px);
+            }
+            
+            .navbar-toggler {
+                margin-left: 5px;
+            }
+            
+            /* Existing mobile styles continue... */
+            #mobile-ganesh-puja-card .mobile-ganesh-card {
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            }
+            
+            /* Add mobile-specific navbar glass styles */
+            .navbar {
+                background: rgba(255, 255, 255, 0.45) !important;
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+            }
+            
+            body.dark-mode .navbar {
+                background: rgba(30, 41, 59, 0.5) !important;
+            }
+        }
+    </style>
+    
+    <!-- Glass Navbar Styles -->
+    <style>
+        /* Modern Glass-style Navbar - More whitish and transparent with frostier blur */
+        .navbar {
+            background: rgba(255, 255, 255, 0.336) !important;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(57, 204, 77, 0.356);
+            transition: all 0.1s ease;
+        }
+        
+        /* Create a subtler frost effect with a gradient overlay */
+        .navbar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.08));
+            z-index: -1;
+        }
+        
+        /* Dark mode glass navbar - slightly more transparent */
+        body.dark-mode .navbar {
+            background: rgba(152, 160, 173, 0.158) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(2, 90, 9, 0.281);
+        }
+        
+        body.dark-mode .navbar::before {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.08));
+        }
+        
+        /* Ensure text and icons are visible against transparent background */
+        .navbar-brand span {
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.644);
+        }
+        
+        .navbar-nav .nav-link {
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        body.dark-mode .navbar-nav .nav-link,
+        body.dark-mode .navbar-brand span {
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Adjust dropdown menu to match glass style */
+        .dropdown-menu {
+            background: rgba(255, 255, 255, 0.781);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
+        }
+        
+        body.dark-mode .dropdown-menu {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        /* Update mobile-specific navbar glass styles */
+        @media (max-width: 576px) {
+            .navbar {
+                background: rgba(255, 255, 255, 0.45) !important;
+            }
+            
+            body.dark-mode .navbar {
+                background: rgba(30, 41, 59, 0.5) !important;
+            }
+        }
+    </style>
+    <style>
+        /* Mobile Puja Info and Card Styles */
+        @media (max-width: 576px) {
+            /* Mobile Ganesh Puja Card Styles */
+            #mobile-ganesh-puja-card {
+                padding: 1rem 0;
+                margin-top: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-countdown {
+                position: relative;
+                border-radius: 15px;
+                background: linear-gradient(135deg, #19af2d79 0%, #0c248888 100%);
+                box-shadow: 0 5px 20px rgba(35, 35, 36, 0.247);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                overflow: auto;
+                padding: 1rem 0.5rem;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-countdown::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, gold, transparent);
+            }
+            
+            #mobile-ganesh-puja-card .mobile-countdown h3 {
+                color: rgba(0, 0, 0, 0.952);
+                text-align: center;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-countdown-container {
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 1rem;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-countdown-item {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+                padding: 0.5rem;
+                width: 22%;
+                text-align: center;
+                box-shadow: 0 4px 10px rgba(109, 121, 109, 0.986);
+                border: 1px solid rgb(30, 255, 0);
+            }
+            
+            #mobile-ganesh-puja-card .mobile-countdown-value {
+                font-size: 3rem;
+                font-weight: 700;
+                color: rgb(243, 19, 11);
+                text-shadow: 0 2px 4px rgb(238, 10, 10);
+            }
+            
+            #mobile-ganesh-puja-card .mobile-countdown-label {
+                font-size: 0.7rem;
+                color: rgba(255, 255, 255, 0.9);
+                margin-top: 0.3rem;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-puja-date-flash {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                padding: 0.8rem;
+                margin: 0.5rem;
+                text-align: center;
+                border: 1px solid rgba(9, 231, 139, 0.3);
+                animation: flash 0.3s infinite;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-puja-date-flash::before {
+                content: '';
+                position: absolute;
+                top: -0.8rem;
+                left: 10%;
+                right: 10%;
+                height: 1px;
+                background: rgba(255, 0, 0, 0.4);
+            }
+            
+            #mobile-ganesh-puja-card .mobile-date-label {
+                display: block;
+                color: rgba(0, 0, 0, 0.932);
+                font-size: 0.9rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-day {
+                font-weight: 700;
+                font-size: 1.1rem;
+                animation: blink 0.1s infinite;
+                color: rgb(224, 14, 14);
+            }
+            
+            #mobile-ganesh-puja-card .mobile-date {
+                font-size: 0.9rem;
+                color: rgba(17, 17, 17, 0.9);
+            }
+            
+            .mobile-puja-schedule {
+                padding: 0.7rem;
+                margin-top: 0.7rem;
+            }
+            
+            .mobile-puja-schedule h4 {
+                font-size: 0.95rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .mobile-schedule-list li {
+                font-size: 0.8rem;
+                padding: 0.35rem 0;
+            }
+            
+            .mobile-download-btn {
+                padding: 0.4rem;
+                font-size: 0.85rem;
+                margin-top: 0.4rem;
+            }
+            
+            .mobile-countdown {
+                margin-bottom: 0.7rem;
+                padding: 0.7rem 0;
+            }
+            
+            .mobile-countdown-wrapper {
+                padding: 0.5rem;
+            }
+            
+            .mobile-puja-date-flash {
+                padding: 0.7rem;
+                margin-top: 0.7rem;
+            }
+            
+            /* Enhanced styling for Ganesh Puja image in mobile view */
+            #ganeshpuja .ganesh-puja-image {
+                position: relative;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                margin: 0.5rem auto 1.5rem;
+                max-width: 95%;
+                background: linear-gradient(45deg, #f5f7fa, #c3cfe2);
+                padding: 0.4rem;
+                border: 2px solid rgba(255, 215, 0, 0.3);
+            }
+            
+            #ganeshpuja .ganesh-puja-image img {
+                border-radius: 12px;
+                transform: scale(1);
+                transition: transform 0.4s ease;
+                max-height: 240px;
+                width: 100%;
+                object-fit: cover;
+            }
+            
+            #ganeshpuja .ganesh-puja-image::before {
+                content: '';
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                right: -5px;
+                bottom: -5px;
+                background: linear-gradient(45deg, gold, transparent, gold);
+                z-index: -1;
+                border-radius: 18px;
+                opacity: 0.6;
+            }
+            
+            #ganeshpuja .ganesh-puja-image::after {
+                content: '॥ श्री गणेशाय नमः ॥';
+                position: absolute;
+                bottom: 8px;
+                right: 8px;
+                background-color: rgba(112, 14, 14, 0.986);
+                padding: 3px 8px;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                color: #333;
+                z-index: 2;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            
+            /* Decorative connector between image and card */
+            #ganeshpuja .row > .col-lg-6:first-child {
+                position: relative;
+            }
+            
+            #ganeshpuja .row > .col-lg-6:first-child::after {
+                content: '';
+                position: absolute;
+                bottom: -12px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2px;
+                height: 20px;
+                background: linear-gradient(to bottom, rgba(255, 215, 0, 0.8), rgba(255, 215, 0, 0.2));
+                z-index: 1;
+            }
+            
+            #ganeshpuja .mobile-countdown {
+                position: relative;
+                border-radius: 15px;
+                background: linear-gradient(135deg, #0c1c7c 0%, #6c6e79 100%);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                overflow: hidden;
+            }
+            
+            #ganeshpuja .mobile-countdown::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, gold, transparent);
+            }
+            
+            /* Enhance the mobile-countdown items */
+            #ganeshpuja .mobile-countdown-item {
+                background-color: rgba(255, 255, 255, 0.1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transform: translateY(0);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            #ganeshpuja .mobile-countdown-value {
+                font-weight: 700;
+                color: gold;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            
+            /* Style the mobile puja schedule to match the image styling */
+            #ganeshpuja .mobile-puja-schedule {
+                position: relative;
+                border-radius: 15px;
+                background: linear-gradient(135deg, #304ffe 0%, #1a237e 100%);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                overflow: hidden;
+                padding: 1rem;
+                margin-top: 0.7rem;
+            }
+            
+            #ganeshpuja .mobile-puja-schedule::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, gold, transparent);
+            }
+            
+            #ganeshpuja .mobile-puja-schedule h4 {
+                color: gold;
+                font-weight: 700;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+                margin-bottom: 1rem;
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+            }
+            
+            #ganeshpuja .mobile-puja-schedule h4::after {
+                content: '';
+                position: absolute;
+                bottom: -0.3rem;
+                left: 25%;
+                right: 25%;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.5), transparent);
+            }
+            
+            #ganeshpuja .mobile-schedule-list li {
+                padding: 0.5rem 0;
+                border-bottom: 1px dashed rgba(255, 215, 0, 0.2);
+                transition: all 0.3s ease;
+            }
+            
+            #ganeshpuja .mobile-schedule-list li:hover {
+                background-color: rgba(255, 255, 255, 0.05);
+                transform: translateX(3px);
+            }
+            
+            #ganeshpuja .mobile-schedule-list li i {
+                color: gold;
+                margin-right: 0.5rem;
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            }
+            
+            #ganeshpuja .mobile-download-btn {
+                background: rgba(255, 215, 0, 0.2);
+                color: white;
+                border: 1px solid rgba(255, 215, 0, 0.3);
+                border-radius: 20px;
+                padding: 0.5rem 1rem;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0.8rem auto 0;
+                width: 85%;
+                transition: all 0.3s ease;
+            }
+            
+            #ganeshpuja .mobile-download-btn:hover {
+                background: rgba(255, 215, 0, 0.3);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            #ganeshpuja .mobile-download-btn i {
+                margin-right: 0.5rem;
+                color: gold;
+            }
+            
+            /* Hero section text adjustments for mobile */
+            .hero-text .hero-line {
+                font-size: 4rem !important;
+                font-weight: 900 !important;
+                letter-spacing: 2px !important;
+                text-shadow: 3px 3px 6px rgba(74, 77, 74, 0.897) !important;
+                margin-bottom: 8px !important;
+                line-height: 1.1 !important;
+            }
+            
+            .hero-text {
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .hero-text .hero-line:nth-child(3) {
+                color: #ffd700 !important;
+                font-size: 3.5rem !important;
+            }
+            
+            .hero-text .hero-line:nth-child(1) {
+                color: #07fa44;
+            }
+            
+            .hero-text .hero-line:nth-child(2) {
+                color: #04ff58;
+            }
+            
+            .hero-text .hero-line:nth-child(3) {
+                color: #05c926;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-puja-info {
+                padding: 0.5rem 0.7rem;
+                color: white;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-puja-info p {
+                font-size: 0.95rem;
+                line-height: 1.4;
+                margin-bottom: 1rem;
+                color: rgba(255, 255, 255, 0.9);
+                text-align: center;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-puja-schedule {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                padding: 1rem;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+            
+            #mobile-ganesh-puja-card .mobile-puja-schedule h4 {
+                color: gold;
+                font-weight: 700;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+                margin-bottom: 1rem;
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+                font-size: 1.1rem;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-puja-schedule h4::after {
+                content: '';
+                position: absolute;
+                bottom: -0.3rem;
+                left: 25%;
+                right: 25%;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.5), transparent);
+            }
+            
+            #mobile-ganesh-puja-card .mobile-schedule-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-schedule-list li {
+                padding: 0.5rem 0;
+                border-bottom: 1px dashed rgba(255, 215, 0, 0.2);
+                display: flex;
+                align-items: center;
+                font-size: 0.9rem;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-schedule-list li:last-child {
+                border-bottom: none;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-schedule-list li i {
+                color: gold;
+                margin-right: 0.5rem;
+                width: 20px;
+                text-align: center;
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            }
+            
+            #mobile-ganesh-puja-card .mobile-schedule-list li span {
+                font-weight: 600;
+                margin-right: 0.3rem;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-celebration-highlights {
+                display: flex;
+                justify-content: space-around;
+                padding: 0.5rem;
+                margin-top: 1rem;
+                text-align: center;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-celebration-highlights .highlight-item {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+                padding: 0.7rem 0.5rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 32%;
+                box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+                transition: all 0.3s ease;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-celebration-highlights .highlight-item:hover {
+                transform: translateY(-3px);
+                background-color: rgba(255, 255, 255, 0.15);
+            }
+            
+            #mobile-ganesh-puja-card .mobile-celebration-highlights .highlight-item i {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+                color: gold;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            
+            #mobile-ganesh-puja-card .mobile-celebration-highlights .highlight-item span {
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-download-btn {
+                background: rgba(141, 120, 4, 0.137);
+                color: white;
+                border: 1px solid rgba(255, 215, 0, 0.3);
+                border-radius: 20px;
+                padding: 0.7rem 1rem;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 1rem auto 0;
+                width: 85%;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            
+            #mobile-ganesh-puja-card .mobile-download-btn:hover {
+                background: rgba(255, 215, 0, 0.3);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                color: rgb(5, 248, 17);
+            }
+            
+            #mobile-ganesh-puja-card .mobile-download-btn i {
+                margin-right: 0.5rem;
+                color: gold;
+            }
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span>VinayakClub</span>
+            </a>
+            
+            <!-- Mobile-only social media icons and theme toggle - visible only on small screens -->
+            <div class="d-flex d-lg-none mobile-icons">
+                <a class="nav-link" href="https://facebook.com/vinayakclub" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="nav-link" href="https://instagram.com/vinayakclub" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="nav-link" href="https://twitter.com/vinayakclub" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <button id="mobile-theme-toggle" class="nav-link">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#donors"><i class="fas fa-hand-holding-heart"></i> Donors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#activities"><i class="fas fa-calendar-alt"></i> Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#donateModal">
+                            <i class="fas fa-heart"></i> Donate
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#joinModal">
+                            <i class="fas fa-user-plus"></i> Join Us
+                        </a>
+                    </li>
+                    <!-- Desktop-only social media icons and theme toggle - hidden on small screens -->
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" href="https://facebook.com/vinayakclub" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" href="https://instagram.com/vinayakclub" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://twitter.com/vinayakclub" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="nav-link">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-text">
+                <h1 class="hero-line">WELCOME</h1>
+                <h1 class="hero-line">TO</h1>
+                <h1 class="hero-line">VINAYAKCLUB</h1>
+            </div>
+            <p>Empowering communities through education, health, and sustainable development initiatives.</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">Learn More</a>
+                <a href="#contact" class="btn btn-outline-light">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="animated-background">
+            <div class="particle-container">
+                <div class="particle particle1"></div>
+                <div class="particle particle2"></div>
+                <div class="particle particle3"></div>
+                <div class="particle particle4"></div>
+                <div class="particle particle5"></div>
+                <div class="particle particle6"></div>
+                <div class="particle particle7"></div>
+                <div class="particle particle8"></div>
+                <div class="particle particle9"></div>
+                <div class="particle particle10"></div>
+                <div class="particle particle11"></div>
+                <div class="particle particle12"></div>
+                <div class="particle particle13"></div>
+                <div class="particle particle14"></div>
+                <div class="particle particle15"></div>
+            </div>
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Vinayak Club</h2>
+                    <p>Welcome to Vinayak Club Association!
+
+                 At Vinayak Club Association, we are dedicated to community welfare, social development, and empowerment. Established with a vision to uplift society, we work towards education, healthcare, environmental sustainability, and skill development to create a better future for all.</p>
+                    <p>💡 Why Choose Us?<br>
+                        ✅ A registered and legally recognized welfare association.<br>
+                        ✅ A team of passionate individuals dedicated to social service.<br>
+                        ✅ Transparent & accountable in all our activities.<br>
+                        ✅ Collaborating with NGOs, government bodies, and corporate CSR programs to maximize impact.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Lives Impacted</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Community Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Active Volunteers</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary mt-4">Join Our Mission</a>
+                </div>
+                <div class="about-image">
+                    <img src="images/ABOUT2.jpg" width=100% alt="Vinayak Club Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Animated Background for About Section */
+        .about-section {
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5rem 0;
+            z-index: 0;
+        }
+        
+        .animated-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .particle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(94, 114, 235, 0.15) 0%, 
+                rgba(58, 200, 225, 0.15) 25%, 
+                rgba(91, 154, 240, 0.15) 50%, 
+                rgba(172, 99, 249, 0.15) 75%, 
+                rgba(65, 88, 208, 0.15) 100%);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
+            opacity: 0.8;
+        }
+        
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.6;
+            filter: blur(8px);
+            animation: floatParticle calc(5s + (var(--particle-time) * 1s)) infinite ease-in-out;
+        }
+        
+        .particle1 {
+            top: 15%;
+            left: 10%;
+            width: 120px;
+            height: 120px;
+            background: rgba(94, 114, 235, 0.3);
+            --particle-time: 0;
+        }
+        
+        .particle2 {
+            top: 60%;
+            left: 20%;
+            width: 80px;
+            height: 80px;
+            background: rgba(58, 200, 225, 0.3);
+            --particle-time: 2;
+        }
+        
+        .particle3 {
+            top: 20%;
+            right: 15%;
+            width: 100px;
+            height: 100px;
+            background: rgba(91, 154, 240, 0.3);
+            --particle-time: 4;
+        }
+        
+        .particle4 {
+            bottom: 25%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            background: rgba(172, 99, 249, 0.3);
+            --particle-time: 6;
+        }
+        
+        .particle5 {
+            top: 45%;
+            left: 45%;
+            width: 70px;
+            height: 70px;
+            background: rgba(65, 88, 208, 0.3);
+            --particle-time: 3;
+        }
+        
+        .particle6 {
+            top: 75%;
+            left: 5%;
+            width: 90px;
+            height: 90px;
+            background: rgba(94, 114, 235, 0.3);
+            --particle-time: 5;
+        }
+        
+        .particle7 {
+            top: 10%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            background: rgba(58, 200, 225, 0.3);
+            --particle-time: 1;
+        }
+        
+        .particle8 {
+            top: 30%;
+            left: 80%;
+            width: 110px;
+            height: 110px;
+            background: rgba(91, 154, 240, 0.3);
+            --particle-time: 7;
+        }
+        
+        .particle9 {
+            top: 85%;
+            left: 35%;
+            width: 130px;
+            height: 130px;
+            background: rgba(172, 99, 249, 0.3);
+            --particle-time: 2;
+        }
+        
+        .particle10 {
+            top: 50%;
+            left: 70%;
+            width: 85px;
+            height: 85px;
+            background: rgba(65, 88, 208, 0.3);
+            --particle-time: 4;
+        }
+        
+        .particle11 {
+            top: 40%;
+            left: 30%;
+            width: 95px;
+            height: 95px;
+            background: rgba(94, 114, 235, 0.3);
+            --particle-time: 6;
+        }
+        
+        .particle12 {
+            top: 65%;
+            left: 85%;
+            width: 75px;
+            height: 75px;
+            background: rgba(58, 200, 225, 0.3);
+            --particle-time: 3;
+        }
+        
+        .particle13 {
+            top: 5%;
+            left: 35%;
+            width: 65px;
+            height: 65px;
+            background: rgba(91, 154, 240, 0.3);
+            --particle-time: 5;
+        }
+        
+        .particle14 {
+            top: 90%;
+            left: 15%;
+            width: 55px;
+            height: 55px;
+            background: rgba(172, 99, 249, 0.3);
+            --particle-time: 1;
+        }
+        
+        .particle15 {
+            top: 25%;
+            left: 60%;
+            width: 105px;
+            height: 105px;
+            background: rgba(65, 88, 208, 0.3);
+            --particle-time: 7;
+        }
+        
+        @keyframes floatParticle {
+            0% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translate(20px, 15px) rotate(5deg) scale(1.1);
+            }
+            50% {
+                transform: translate(0, 30px) rotate(10deg) scale(1);
+            }
+            75% {
+                transform: translate(-20px, 15px) rotate(-5deg) scale(0.9);
+            }
+            100% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+        }
+        
+        /* Interactive hover effect */
+        .about-section:hover .particle {
+            animation-play-state: var(--particle-time);
+        }
+        
+        .about-section:hover .gradient-overlay {
+            opacity: 0.9;
+            transition: opacity 0.1s ease;
+        }
+        
+        /* Content styling enhancements */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+            background: rgba(102, 153, 127, 0.151);
+            backdrop-filter: blur(05px);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.658);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(45deg, #4e73df, #36b9cc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            bottom: -10px;
+            left: 0;
+            background: linear-gradient(90deg, #4e73df, #36b9cc);
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .about-image img {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.1s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.02);
+        }
+        
+        .about-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.1s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4e73df;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        
+        /* Dark mode adjustments */
+        body.dark-mode .about-section {
+            background: rgba(235, 237, 241, 0.103);
+        }
+        
+        body.dark-mode .about-content {
+            background: rgba(53, 102, 180, 0.144);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        body.dark-mode .stat-item {
+            background: rgba(44, 55, 74, 0.7);
+        }
+        
+        body.dark-mode .stat-number {
+            color: #a3bffa;
+        }
+        
+        body.dark-mode .stat-label {
+            color: #e2e8f0;
+        }
+        
+        body.dark-mode .about-text p {
+            color: #e2e8f0;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text {
+                order: 2;
+            }
+            
+            .about-image {
+                order: 1;
+                margin-bottom: 2rem;
+            }
+            
+            .particle {
+                opacity: 0.4;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .about-text h2 {
+                font-size: 2rem;
+            }
+            
+            .particle {
+                filter: blur(5px);
+            }
+        }
+    </style>
+
+    <!-- Mobile-only Ganesh Puja Countdown Card - Only visible on mobile devices -->
+    <section id="mobile-ganesh-puja-card" class="py-4 d-sm-none">
+        <div class="container">
+            <div class="mobile-ganesh-card">
+                <div class="mobile-countdown">
+                    <div class="container px-0">
+                        <div class="mobile-countdown-wrapper">
+                            <h3>Countdown to Ganesh Puja</h3>
+                            <div class="mobile-countdown-container">
+                                <div class="mobile-countdown-item">
+                                    <div class="mobile-countdown-value" id="mobile-gpcard-days">00</div>
+                                    <div class="mobile-countdown-label">Days</div>
+                                </div>
+                                <div class="mobile-countdown-item">
+                                    <div class="mobile-countdown-value" id="mobile-gpcard-hours">00</div>
+                                    <div class="mobile-countdown-label">Hours</div>
+                                </div>
+                                <div class="mobile-countdown-item">
+                                    <div class="mobile-countdown-value" id="mobile-gpcard-minutes">00</div>
+                                    <div class="mobile-countdown-label">Minutes</div>
+                                </div>
+                                <div class="mobile-countdown-item">
+                                    <div class="mobile-countdown-value" id="mobile-gpcard-seconds">00</div>
+                                    <div class="mobile-countdown-label">Seconds</div>
+                                </div>
+                            </div>
+                            <div class="mobile-puja-date-flash">
+                                <div class="mobile-date-container">
+                                    <span class="mobile-date-label">Ganesh Puja Date</span>
+                                    <div class="mobile-date-display">
+                                        <span class="mobile-day">August 27, 2025</span>
+                                        <span class="mobile-date"> & Bhasani Yatra on August 29</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Mobile Puja Details -->
+                            <div class="mobile-puja-info mt-3">
+                                <p>Every year, Vinayak Club organizes a grand Ganesh Puja celebration with traditional rituals, cultural programs, and community activities.</p>
+                                
+                                <!-- Schedule Details -->
+                                <div class="mobile-puja-schedule">
+                                    <h4>Puja Schedule</h4>
+                                    <ul class="mobile-schedule-list">
+                                        <li><i class="fas fa-clock"></i> <span>Puja Starts at:</span> 8:00 AM</li>
+                                        <li><i class="fas fa-pray"></i> <span>Puspanjali:</span> 11:00 AM</li>
+                                        <li><i class="fas fa-utensils"></i> <span>Prasad Sevan:</span> 12:30 PM</li>
+                                        <li><i class="fas fa-water"></i> <span>Bhasani Starts at:</span> 3:00 PM</li>
+                                        <li><i class="fas fa-music"></i> <span>Cultural Programme:</span> 6:00 PM</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Celebration Highlights -->
+                                <div class="mobile-celebration-highlights mt-3">
+                                    <div class="highlight-item">
+                                        <i class="fas fa-pray"></i>
+                                        <span>Puja Rituals</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="fas fa-music"></i>
+                                        <span>Cultural Programs</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="fas fa-utensils"></i>
+                                        <span>Grand Feast</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Download Button -->
+                                <a href="documents/ganesh-puja-details.pdf" class="mobile-download-btn mt-3" download>
+                                    <i class="fas fa-download"></i> Download Full Schedule
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ganesh Puja Section - Only visible on screens larger than mobile -->
+    <section id="ganeshpuja" class="py-5 ganesh-puja-section d-none d-sm-block">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-4 fw-bold text-primary mb-3">Our Ganesh Puja</h2>
+                <p class="lead text-muted">Join us in celebrating the divine presence of Lord Ganesha</p>
+            </div>
+            
+            <!-- Mobile-only Countdown -->
+            <div class="mobile-countdown d-lg-none">
+                <div class="container">
+                    <div class="mobile-countdown-wrapper">
+                        <h3>Countdown to Ganesh Puja</h3>
+                        <div class="mobile-countdown-container">
+                            <div class="mobile-countdown-item">
+                                <div class="mobile-countdown-value" id="mobile-gp-days">00</div>
+                                <div class="mobile-countdown-label">Days</div>
+                            </div>
+                            <div class="mobile-countdown-item">
+                                <div class="mobile-countdown-value" id="mobile-gp-hours">00</div>
+                                <div class="mobile-countdown-label">Hours</div>
+                            </div>
+                            <div class="mobile-countdown-item">
+                                <div class="mobile-countdown-value" id="mobile-gp-minutes">00</div>
+                                <div class="mobile-countdown-label">Minutes</div>
+                            </div>
+                            <div class="mobile-countdown-item">
+                                <div class="mobile-countdown-value" id="mobile-gp-seconds">00</div>
+                                <div class="mobile-countdown-label">Seconds</div>
+                            </div>
+                        </div>
+                        <div class="mobile-puja-date-flash">
+                            <div class="mobile-date-container">
+                                <span class="mobile-date-label">Ganesh Puja Date</span>
+                                <div class="mobile-date-display">
+                                    <span class="mobile-day">August 27,2025</span>
+                                    <span class="mobile-date"> & Bhasani Yatra on August 29</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile Puja Schedule Card - Only visible on mobile -->
+                        <div class="mobile-puja-schedule d-lg-none">
+                            <h4>Puja Schedule</h4>
+                            <ul class="mobile-schedule-list">
+                                <li><i class="fas fa-clock"></i> <span>Puja Starts at:</span> 8:00 AM</li>
+                                <li><i class="fas fa-pray"></i> <span>Puspanjali:</span> 11:00 AM</li>
+                                <li><i class="fas fa-utensils"></i> <span>Prasad Sevan:</span> 12:30 PM</li>
+                                <li><i class="fas fa-water"></i> <span>Bhasani Starts at:</span> 3:00 PM</li>
+                                <li><i class="fas fa-music"></i> <span>Cultural Programme:</span> 6:00 PM</li>
+                            </ul>
+                            <a href="documents/ganesh-puja-details.pdf" class="mobile-download-btn" download>
+                                <i class="fas fa-download"></i> Download Schedule
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="ganesh-puja-image">
+                        <img src="images/ganesh-puja.jpg" alt="Ganesh Puja Celebration" class="img-fluid rounded shadow-lg">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3>Celebration Details</h3>
+                                <ul>
+                                    <li><i class="fas fa-calendar"></i> Aug 27 - Aug 29, 2025</li>
+                                    <li><i class="fas fa-map-marker-alt"></i> Vinayak Club Community Hall</li>
+                                    <li><i class="fas fa-clock"></i> Grand Feast on Aug 31</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ganesh-puja-content">
+                        <div class="countdown-wrapper">
+                            <h3 class="text-primary mb-4">Countdown to Next Ganesh Puja</h3>
+                            <div class="countdown-container">
+                                <div class="countdown-item">
+                                    <div class="countdown-value" id="gp-days">00</div>
+                                    <div class="countdown-label">Days</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="countdown-value" id="gp-hours">00</div>
+                                    <div class="countdown-label">Hours</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="countdown-value" id="gp-minutes">00</div>
+                                    <div class="countdown-label">Minutes</div>
+                                </div>
+                                <div class="countdown-item">
+                                    <div class="countdown-value" id="gp-seconds">00</div>
+                                    <div class="countdown-label">Seconds</div>
+                                </div>
+                            </div>
+                            <div class="puja-date-flash mt-4">
+                                <div class="date-container">
+                                    <span class="date-label">Ganesh Puja Date</span>
+                                    <div class="date-display">
+                                        <span class="day">August 27, 2025</span>
+                                        <span class="date">Bhasani Yatra on August 29</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ganesh-puja-info">
+                            <p>Every year, Vinayak Club organizes a grand Ganesh Puja celebration with traditional rituals, cultural programs, and community activities. Join us to seek the blessings of Lord Ganesha and participate in this festive celebration.</p>
+                            <div class="celebration-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-pray"></i>
+                                    <span>Puja Rituals</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-music"></i>
+                                    <span>Cultural Programs</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Grand Feast</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="puja-details-section">
+                            <button class="btn btn-primary btn-lg mt-4 w-100" id="pujaDetailsBtn">
+                                <i class="fas fa-info-circle me-2"></i>More Details
+                            </button>
+                            <div class="puja-details" id="pujaDetailsContent" style="display: none;">
+                                <h4 class="mb-4">Puja Details</h4>
+                                <div class="detail-item">
+                                    <i class="fas fa-clock"></i>
+                                    <div>
+                                        <h5>Puja Starts At</h5>
+                                        <p>8:00 AM - 12:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-utensils"></i>
+                                    <div>
+                                        <h5>Bhoji</h5>
+                                        <p>12:30 PM - 2:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-water"></i>
+                                    <div>
+                                        <h5>Bhasani</h5>
+                                        <p>3:00 PM - 4:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-users"></i>
+                                    <div>
+                                        <h5>Grand Feast</h5>
+                                        <p>7:00 PM - 9:00 PM</p>
+                                    </div>
+                                </div>
+                                <a href="documents/ganesh-puja-details.pdf" class="btn btn-outline-primary mt-4 w-100" download>
+                                    <i class="fas fa-download me-2"></i>Download Puja Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Ganesh Puja Section Styles */
+        .ganesh-puja-section {
+            background: linear-gradient(135deg, #579ce2 0%, #4f30a3b0 100%);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ganesh-puja-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/pattern.png') repeat;
+            opacity: 0.03;
+            z-index: 1;
+        }
+        
+        .ganesh-puja-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(3, 3, 3, 0.911);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .ganesh-puja-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(3, 3, 3, 0.95);
+        }
+        
+        .ganesh-puja-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .ganesh-puja-image:hover img {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(17, 6, 139, 0.815);
+            backdrop-filter: blur(15px);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 2rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .overlay-content h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .overlay-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .overlay-content li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .ganesh-puja-content {
+            background: rgba(255, 255, 255, 0.062);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+        }
+        
+        .ganesh-puja-content:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(17, 6, 139, 0.815);
+            backdrop-filter: blur(15px);
+        }
+        
+        .countdown-wrapper {
+            background: linear-gradient(145deg, #8ac6d86e, #4c4ca01a);
+            border-radius: 15px;
+            padding: 2rem;
+            color: rgb(255, 251, 5);
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.486);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                        linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%),
+                        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%);
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
+
+        .countdown-wrapper h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .countdown-item {
+            text-align: center;
+            flex: 1;
+            background: rgba(172, 97, 97, 0.226);
+            border-radius: 12px;
+            padding: 1rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(74, 119, 216, 0.39);
+            transition: transform 0.1s ease, box-shadow 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown-value {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(233, 219, 23, 0.411);
+            background: linear-gradient(45deg, #e9ec08, #dbd805);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .ganesh-puja-info {
+            margin-bottom: 2rem;
+        }
+        
+        .ganesh-puja-info p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #0c0c0c77;
+            margin-bottom: 1.5rem;
+        }
+
+        .celebration-highlights {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            text-align: center;
+            flex: 1;
+            padding: 1rem;
+            background: rgba(5, 5, 5, 0.11);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .highlight-item i {
+            font-size: 1.5rem;
+            color: #fbff02;
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-item span {
+            display: block;
+            font-size: 0.9rem;
+            color: gold;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode .ganesh-puja-section {
+            background: linear-gradient(135deg, #2e466efb 0%, #1b0247 100%);
+        }
+
+        body.dark-mode .ganesh-puja-content {
+            background: rgba(12, 12, 12, 0.192);
+            color: #fff;
+        }
+
+        body.dark-mode .ganesh-puja-info p {
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .highlight-item {
+            background: rgba(61, 3, 95, 0.767);
+        }
+
+        body.dark-mode .highlight-item span {
+            color: #e2e8f0;
+        }
+        
+        body.dark-mode .countdown-wrapper {
+            background: linear-gradient(145deg, #1f5dc7, #051025);
+        }
+        
+        body.dark-mode .countdown-item {
+            background: rgba(14, 34, 126, 0.918);
+            border-color: rgba(56, 44, 44, 0.1);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .countdown-wrapper {
+                background: linear-gradient(145deg, #2e59d9, #1f5dc7);
+                padding: 1.5rem 0.8rem;
+                margin: 0;
+                border-radius: 0;
+                position: relative;
+                overflow: hidden;
+                display: block !important;
+            }
+
+            .countdown-wrapper::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                            linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                            linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%),
+                            linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%);
+                background-size: 15px 15px;
+                opacity: 0.15;
+            }
+
+            .countdown-wrapper h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1.2rem;
+                padding: 0 0.5rem;
+                text-align: center;
+                color: #fff;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            }
+
+            .countdown-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+                padding: 0 0.5rem;
+            }
+
+            .countdown-item {
+                background: rgba(255, 255, 255, 0.15);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 12px;
+                padding: 1rem 0.5rem;
+                min-width: unset;
+                flex: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                backdrop-filter: blur(5px);
+            }
+
+            .countdown-value {
+                font-size: 2.2rem;
+                margin-bottom: 0.3rem;
+                color: #fff;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+                font-weight: 700;
+            }
+
+            .countdown-label {
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.9);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .puja-date-flash {
+                margin-top: 1.2rem;
+                padding: 0.8rem;
+                background: rgba(255, 255, 255, 0.15);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 10px;
+            }
+
+            .date-display .day {
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+
+            .date-display .date {
+                font-size: 0.9rem;
+                opacity: 0.9;
+            }
+
+            .ganesh-puja-content {
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .countdown-wrapper {
+                padding: 1.2rem 0.6rem;
+            }
+
+            .countdown-wrapper h3 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .countdown-container {
+                gap: 0.6rem;
+            }
+
+            .countdown-item {
+                padding: 0.8rem 0.4rem;
+            }
+
+            .countdown-value {
+                font-size: 2rem;
+            }
+
+            .countdown-label {
+                font-size: 0.8rem;
+            }
+
+            .puja-date-flash {
+                padding: 0.7rem;
+            }
+
+            .date-display .day {
+                font-size: 1rem;
+            }
+
+            .date-display .date {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Puja Details Styles */
+        .puja-details-section {
+            margin-top: 2rem;
+            position: relative;
+        }
+        
+        #pujaDetailsBtn {
+            position: relative;
+            transition: all 0.3s ease-out;
+            overflow: hidden;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        #pujaDetailsBtn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: all 0.8s ease-out;
+            opacity: 0.7;
+        }
+        
+        #pujaDetailsBtn:hover::before {
+            left: 100%;
+        }
+        
+        #pujaDetailsBtn:active {
+            transform: scale(0.99);
+        }
+        
+        #pujaDetailsBtn i {
+            transition: transform 0.4s ease-out;
+        }
+        
+        #pujaDetailsBtn:hover i {
+            transform: rotate(45deg);
+        }
+
+        .puja-details {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 15px;
+            padding: 0;
+            margin-top: 1rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.6s ease-out;
+            transform: translateY(-10px);
+            opacity: 0;
+            height: auto;
+            overflow: hidden;
+            transform-origin: top center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .puja-details .detail-item:first-child {
+            animation-delay: 0.05s;
+        }
+        
+        .puja-details .detail-item:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        
+        .puja-details .detail-item:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+        
+        .puja-details .detail-item:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+        
+        .puja-details.active {
+            display: block !important;
+            opacity: 1;
+            transform: translateY(0);
+            padding: 1.5rem;
+        }
+        
+        .puja-details.active .detail-item {
+            animation: fadeIn 0.4s forwards ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                transform: translateY(10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+            transition: all 0.3s ease-out;
+            cursor: default;
+            transform: translateY(10px);
+            opacity: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-left: 2px solid #4e73df;
+        }
+
+        .detail-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 15px rgba(9, 4, 80, 0.2);
+            background: rgba(255, 255, 255, 0.75);
+        }
+
+        .detail-item i {
+            font-size: 1.2rem;
+            color: #4e73df;
+            margin-right: 1.2rem;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(78, 115, 223, 0.07);
+            border-radius: 50%;
+            transition: all 0.3s ease-out;
+        }
+        
+        .detail-item:hover i {
+            transform: scale(1.1);
+            color: #4e73df;
+            background: rgba(78, 115, 223, 0.15);
+        }
+
+        .detail-item h5 {
+            margin: 0;
+            color: #000000;
+            font-size: 1.05rem;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 0.2rem;
+        }
+        
+        .detail-item h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(to right, #4e73df, transparent);
+            transition: width 0.4s ease-out;
+        }
+        
+        .detail-item:hover h5::after {
+            width: 70%;
+        }
+
+        .detail-item p {
+            margin: 0;
+            color: #242930;
+            font-size: 0.9rem;
+            transition: color 0.3s ease-out;
+        }
+        
+        .detail-item:hover p {
+            color: #36404a;
+        }
+        
+        .puja-details a.btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease-out;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.4s 0.2s forwards;
+        }
+        
+        .puja-details a.btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.8s ease-out;
+        }
+        
+        .puja-details a.btn:hover::before {
+            left: 100%;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode .puja-details {
+            background: rgba(45, 55, 72, 0.5);
+            border-color: rgba(255, 255, 255, 0.03);
+        }
+
+        body.dark-mode .detail-item {
+            background: rgba(45, 55, 72, 0.7);
+            border-left-color: #a3bffa;
+        }
+        
+        body.dark-mode .detail-item:hover {
+            background: rgba(55, 65, 82, 0.7);
+        }
+
+        body.dark-mode .detail-item i {
+            background: rgba(78, 115, 223, 0.1);
+            color: #a3bffa;
+        }
+        
+        body.dark-mode .detail-item:hover i {
+            background: rgba(78, 115, 223, 0.2);
+        }
+
+        body.dark-mode .detail-item h5 {
+            color: #f0f0f0;
+        }
+        
+        body.dark-mode .detail-item h5::after {
+            background: linear-gradient(to right, #a3bffa, transparent);
+        }
+
+        body.dark-mode .detail-item p {
+            color: #e2e8f0;
+        }
+        
+        body.dark-mode .detail-item:hover p {
+            color: #f0f4f8;
+        }
+
+        /* Add these styles to the existing Ganesh Puja Section Styles */
+        .puja-date-flash {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            animation: flash 0.3s infinite;
+            border: 2px solid rgba(233, 203, 35, 0.116);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes flash {
+            0% {
+                box-shadow: 0 0 15px rgba(207, 15, 2, 0.445);
+                background: rgba(255, 255, 255, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 30px rgb(253, 3, 3);
+                background: rgba(255, 215, 0, 0.2);
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(255, 0, 0, 0.993);
+                background: rgba(255, 3, 3, 0.986);
+            }
+        }
+
+        .date-container {
+            text-align: center;
+            color: rgb(251, 255, 0);
+        }
+
+        .date-label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        .date-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .date-display .day {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .date-display .date {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .date-display .day {
+                font-size: 1rem;
+            }
+            .date-display .date {
+                font-size: 0.9rem;
+            }
+            .date-label {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Global function for inline onclick handler
+        function togglePujaDetails() {
+            const pujaDetails = document.querySelector('.puja-details');
+            const toggleBtn = document.getElementById('toggleDetailsBtn');
+            
+            if (pujaDetails.style.display === 'none' || pujaDetails.style.display === '') {
+                pujaDetails.style.display = 'block';
+                toggleBtn.innerHTML = '<i class="fas fa-minus-circle me-2"></i>Hide Details';
+            } else {
+                pujaDetails.style.display = 'none';
+                toggleBtn.innerHTML = '<i class="fas fa-info-circle me-2"></i>More Details';
+            }
+            
+            return false; // Prevent default action
+        }
+    
+        // Add this to your existing JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleDetailsBtn = document.getElementById('toggleDetailsBtn');
+            const pujaDetails = document.querySelector('.puja-details');
+            
+            // Force initial state - needed because style attribute may be unreliable
+            pujaDetails.style.display = 'none';
+            
+            toggleDetailsBtn.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent any default button behavior
+                togglePujaDetails(); // Use the same function for both inline and event listener
+            });
+        });
+    </script>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-5 position-relative">
+        <div class="activities-bg"></div>
+        <div class="animated-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+            <div class="shape shape-6"></div>
+        </div>
+        <div class="container position-relative">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-4 fw-bold text-primary mb-3">Our Activities</h2>
+                <p class="lead text-muted">Discover how we're making a difference in our community</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Social Welfare -->
+                <div class="col-md-2">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4>Social Welfare</h4>
+                        <p>Supporting underprivileged communities through various welfare programs.</p>
+                        <div class="activity-details">
+                            <ul>
+                                <li>Food distribution drives</li>
+                                <li>Clothing donation camps</li>
+                                <li>Elderly care programs</li>
+                                <li>Women empowerment initiatives</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educational Programs -->
+                <div class="col-md-2">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Educational Programs</h4>
+                        <p>Providing quality education and skill development opportunities.</p>
+                        <div class="activity-details">
+                            <ul>
+                                <li>Scholarship programs</li>
+                                <li>Computer literacy classes</li>
+                                <li>Career counseling sessions</li>
+                                <li>Library facilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health & Hygiene -->
+                <div class="col-md-2">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4>Health & Hygiene</h4>
+                        <p>Promoting health awareness and providing medical assistance.</p>
+                        <div class="activity-details">
+                            <ul>
+                                <li>Health check-up camps</li>
+                                <li>Hygiene awareness programs</li>
+                                <li>Medical aid distribution</li>
+                                <li>First aid training</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sports & Cultural -->
+                <div class="col-md-2">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h4>Sports & Cultural</h4>
+                        <p>Organizing sports events and cultural programs for community engagement.</p>
+                        <div class="activity-details">
+                            <ul>
+                                <li>Annual sports meet</li>
+                                <li>Cultural festivals</li>
+                                <li>Youth tournaments</li>
+                                <li>Traditional dance workshops</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Environmental -->
+                <div class="col-md-2">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Environmental</h4>
+                        <p>Working towards a sustainable and eco-friendly community.</p>
+                        <div class="activity-details">
+                            <ul>
+                                <li>Tree plantation drives</li>
+                                <li>Clean-up campaigns</li>
+                                <li>Waste management programs</li>
+                                <li>Environmental awareness workshops</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Justice -->
+                <div class="col-md-2">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h4>Social Justice</h4>
+                        <p>Advocating for equal rights and social justice in our community.</p>
+                        <div class="activity-details">
+                            <ul>
+                                <li>Legal aid camps</li>
+                                <li>Human rights awareness</li>
+                                <li>Anti-discrimination programs</li>
+                                <li>Community advocacy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-outline-primary expand-all-btn">
+                    <i class="fas fa-list"></i> Show All Activities
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Activities Section Styles */
+        #activities {
+            position: relative;
+            background-color: #08439c;
+            padding: 6rem 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .activities-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, #e0f7fa, #bbdefb, #c5cae9, #d1c4e9);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            opacity: 0.8;
+            z-index: 0;
+        }
+        
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .animated-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .shape {
+            position: absolute;
+            background: rgba(78, 115, 223, 0.2);
+            border-radius: 50%;
+            animation: floatAnimation 8s infinite linear;
+            box-shadow: 0 8px 32px rgba(78, 115, 223, 0.15);
+        }
+        
+        .shape-1 {
+            width: 80px;
+            height: 80px;
+            top: 15%;
+            left: 10%;
+            animation-duration: 15s;
+            animation-delay: 0s;
+        }
+        
+        .shape-2 {
+            width: 120px;
+            height: 120px;
+            top: 70%;
+            left: 20%;
+            background: rgba(78, 115, 223, 0.15);
+            animation-duration: 18s;
+            animation-delay: 1s;
+        }
+        
+        .shape-3 {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            left: 80%;
+            background: rgba(78, 115, 223, 0.1);
+            animation-duration: 13s;
+            animation-delay: 2s;
+        }
+        
+        .shape-4 {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: 70%;
+            background: rgba(78, 115, 223, 0.05);
+            animation-duration: 20s;
+            animation-delay: 0.5s;
+        }
+        
+        .shape-5 {
+            width: 100px;
+            height: 100px;
+            top: 60%;
+            left: 50%;
+            background: rgba(78, 115, 223, 0.12);
+            animation-duration: 16s;
+            animation-delay: 3s;
+        }
+        
+        .shape-6 {
+            width: 70px;
+            height: 70px;
+            top: 30%;
+            left: 30%;
+            background: rgba(78, 115, 223, 0.08);
+            animation-duration: 12s;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes floatAnimation {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(10px, 30px) rotate(90deg);
+            }
+            50% {
+                transform: translate(30px, 10px) rotate(180deg);
+            }
+            75% {
+                transform: translate(20px, -20px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+        
+        #activities .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        #activities .section-header h2 {
+            background: linear-gradient(45deg, #4e73df, #2e59d9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: colorShift 5s infinite alternate;
+            text-shadow: 0 0 5px rgba(78, 115, 223, 0.1);
+        }
+        
+        @keyframes colorShift {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(30deg);
+            }
+        }
+
+        .activity-item {
+            background: rgba(167, 162, 236, 0.959);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            height: 100%;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            overflow: hidden;
+            border: 1px solid rgba(51, 42, 177, 0.288);
+        }
+
+        .activity-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(78, 115, 223, 0) 0%, rgba(78, 115, 223, 0.1) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .activity-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(9, 62, 219, 0.795);
+            transition-duration: 0.1s;
+        }
+        
+        .activity-item:hover::before {
+            opacity: 1;
+        }
+
+        .activity-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(145deg, #4e73df, #2e59d9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(78, 115, 223, 0.3);
+        }
+        
+        .activity-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(78, 115, 223, 0.3);
+            animation: pulseRing 2s infinite;
+        }
+
+        @keyframes pulseRing {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 0.1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .activity-item:hover .activity-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(145deg, #5e83ef, #3e69e9);
+        }
+
+        .activity-icon i {
+            font-size: 1.5rem;
+            color: white;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+        }
+
+        .activity-item h4 {
+            color: #2d3748;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .activity-item h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, #4e73df, #2e59d9);
+            transition: width 0.3s ease;
+        }
+        
+        .activity-item:hover h4::after {
+            width: 70%;
+        }
+
+        .activity-item p {
+            color: #718096;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .activity-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.3s ease-out, transform 0.5s ease-out;
+            margin-top: 1rem;
+            text-align: left;
+            background: rgba(78, 115, 223, 0.05);
+            border-radius: 10px;
+            padding: 0 1rem;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .activity-details.active {
+            max-height: 300px;
+            padding: 1rem;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .activity-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .activity-details li {
+            color: #718096;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.85rem;
+            transition: transform 0.3s ease;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .activity-details li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4e73df;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .activity-details.active li:hover {
+            transform: translateX(5px);
+            color: #4e73df;
+        }
+        
+        .activity-details.active li:hover::before {
+            opacity: 1;
+            transform: translateY(-50%) translateX(-3px);
+        }
+
+        .activity-details li:last-child {
+            border-bottom: none;
+        }
+
+        .expand-all-btn {
+            padding: 0.75rem 2rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(78, 115, 223, 0.5);
+            box-shadow: 0 5px 15px rgba(78, 115, 223, 0.1);
+            z-index: 5;
+            position: relative;
+        }
+
+        .expand-all-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(78, 115, 223, 0.2);
+            background: rgba(78, 115, 223, 0.9);
+            color: white;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode #activities {
+            background-color: #1a202c;
+        }
+        
+        body.dark-mode .activities-bg {
+            background: linear-gradient(120deg, #0f172a, #1e293b, #263449, #2d3748);
+            opacity: 0.9;
+        }
+        
+        body.dark-mode .shape {
+            background: rgba(78, 115, 223, 0.15);
+        }
+
+        body.dark-mode .activity-item {
+            background: rgba(45, 55, 72, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .activity-item h4 {
+            color: #fff;
+        }
+
+        body.dark-mode .activity-item p {
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .activity-details {
+            background: rgba(78, 115, 223, 0.1);
+        }
+
+        body.dark-mode .activity-details li {
+            color: #e2e8f0;
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .activity-details.active li:hover {
+            color: #9bb5ff;
+        }
+        
+        body.dark-mode .expand-all-btn {
+            background: rgba(45, 55, 72, 0.8);
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .expand-all-btn:hover {
+            background: rgba(78, 115, 223, 0.8);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            #activities {
+                padding: 4rem 0;
+            }
+            
+            .row {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+                scrollbar-color: #4e73df #f8f9fc;
+            }
+            
+            .row::-webkit-scrollbar {
+                height: 8px;
+            }
+            
+            .row::-webkit-scrollbar-track {
+                background: rgba(248, 249, 252, 0.6);
+                border-radius: 4px;
+            }
+            
+            .row::-webkit-scrollbar-thumb {
+                background-color: rgba(78, 115, 223, 0.7);
+                border-radius: 4px;
+            }
+
+            .col-md-2 {
+                flex: 0 0 250px;
+                max-width: 250px;
+            }
+
+            .activity-item {
+                padding: 1rem;
+            }
+
+            .activity-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .activity-icon i {
+                font-size: 1.2rem;
+            }
+
+            .activity-item h4 {
+                font-size: 1rem;
+            }
+
+            .activity-item p {
+                font-size: 0.8rem;
+            }
+            
+            body.dark-mode .row::-webkit-scrollbar-track {
+                background: rgba(45, 55, 72, 0.3);
+            }
+            
+            .shape {
+                opacity: 0.5;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Activity items expansion
+            const activityItems = document.querySelectorAll('.activity-item');
+            const expandAllBtn = document.querySelector('.expand-all-btn');
+            let expanded = false;
+            
+            activityItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const details = this.querySelector('.activity-details');
+                    if (details.classList.contains('active')) {
+                        details.classList.remove('active');
+                    } else {
+                        // Close all other details
+                        document.querySelectorAll('.activity-details.active').forEach(activeDetails => {
+                            activeDetails.classList.remove('active');
+                        });
+                        details.classList.add('active');
+                    }
+                });
+            });
+            
+            expandAllBtn.addEventListener('click', function() {
+                const detailsElements = document.querySelectorAll('.activity-details');
+                if (expanded) {
+                    detailsElements.forEach(details => {
+                        details.classList.remove('active');
+                    });
+                    this.innerHTML = '<i class="fas fa-list"></i> Show All Activities';
+                    expanded = false;
+                } else {
+                    detailsElements.forEach(details => {
+                        details.classList.add('active');
+                    });
+                    this.innerHTML = '<i class="fas fa-list-ul"></i> Hide All Activities';
+                    expanded = true;
+                }
+            });
+            
+            // Add mouse trail effect to activities section
+            const activitiesSection = document.getElementById('activities');
+            
+            activitiesSection.addEventListener('mousemove', function(e) {
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+                
+                const shapes = document.querySelectorAll('.shape');
+                shapes.forEach((shape, index) => {
+                    const speed = index * 0.02;
+                    const x = (window.innerWidth - mouseX * speed) / 100;
+                    const y = (window.innerHeight - mouseY * speed) / 100;
+                    
+                    shape.style.transform = `translate(${x}px, ${y}px) rotate(${x * y}deg)`;
+                });
+            });
+        });
+    </script>
+
+    <!-- Governing Body Members Section -->
+    <section id="governing-body" class="py-5">
+        <div class="members-bg"></div>
+        <div class="container position-relative">
+            <div class="text-center mb-4">
+                <h2 class="section-title">Our Governing Body Members</h2>
+                <p class="lead mb-0">Meet the dedicated team leading our community</p>
+            </div>
+            <div class="members-grid">
+                <!-- President -->
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="images/members/president.jpg" alt="President" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                        <h3>President</h3>
+                        <p class="member-name">Bhanja Kishore</p>
+                        <div class="member-contact">
+                            <a href="https://wa.me/917606003424" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+917606003424" class="contact-btn call">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vice President -->
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="images/members/vice-president.jpg" alt="Vice President" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                        <h3>Vice President</h3>
+                        <p class="member-name">Ananta Kumar</p>
+                        <div class="member-contact">
+                            <a href="https://wa.me/917605905932" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+917605905932" class="contact-btn call">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Secretary -->
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="images/members/secretary.jpg" alt="Secretary" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                        <h3>Secretary</h3>
+                        <p class="member-name">Jitendra (Bubu)</p>
+                        <div class="member-contact">
+                            <a href="https://wa.me/917381967859" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+917381967859" class="contact-btn call">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Treasurer -->
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="images/members/treasurer.jpg" alt="Treasurer" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                        <h3>Treasurer</h3>
+                        <p class="member-name">Soumya Ranjan</p>
+                        <div class="member-contact">
+                            <a href="https://wa.me/919124446630" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+919124446630" class="contact-btn call">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Assistant Secretary -->
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="images/members/assistant-secretary.jpg" alt="Assistant Secretary" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                        <h3>Assistant Secretary</h3>
+                        <p class="member-name">Asish</p>
+                        <div class="member-contact">
+                            <a href="https://wa.me/916371455406" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+916371455406" class="contact-btn call">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Executive Member 1 -->
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="images/members/executive1.jpg" alt="Executive Member 1" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                        <h3>Executive Member</h3>
+                        <p class="member-name">Ajay Behera</p>
+                        <div class="member-contact">
+                            <a href="https://wa.me/919938982611" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+919938982611" class="contact-btn call">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Executive Member 2 -->
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="images/members/executive2.jpg" alt="Executive Member 2" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                        <h3>Executive Member</h3>
+                        <p class="member-name">Abhijit (Gulu)</p>
+                        <div class="member-contact">
+                            <a href="https://wa.me/919668763819" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+919668763819" class="contact-btn call">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Members Section Styles with Animated Background */
+        #governing-body {
+            position: relative;
+            overflow: hidden;
+            background-color: #f8f9fa;
+            transition: background-color 0.3s ease;
+        }
+        
+        body.dark-mode #governing-body {
+            background-color: #000000;
+        }
+        
+        .members-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .members-bg::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            right: -20%;
+            bottom: -20%;
+            background: linear-gradient(125deg, rgba(7, 248, 19, 0.08) 0%, rgba(0, 0, 255, 0.05) 100%);
+            animation: rotateBg 30s linear infinite;
+        }
+        
+        .members-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(7, 248, 19, 0.15) 0, transparent 100px),
+                radial-gradient(circle at 80% 70%, rgba(0, 0, 255, 0.1) 0, transparent 100px);
+            animation: pulseBg 10s ease-in-out infinite alternate;
+        }
+        
+        body.dark-mode .members-bg::before {
+            background: linear-gradient(125deg, rgba(7, 248, 19, 0.1) 0%, rgba(65, 105, 225, 0.08) 100%);
+            opacity: 0.4;
+        }
+        
+        body.dark-mode .members-bg::after {
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(7, 248, 19, 0.2) 0, transparent 150px),
+                radial-gradient(circle at 80% 70%, rgba(65, 105, 225, 0.2) 0, transparent 150px);
+            opacity: 0.6;
+        }
+        
+        @keyframes rotateBg {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes pulseBg {
+            0% {
+                opacity: 0.3;
+            }
+            100% {
+                opacity: 0.7;
+            }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title {
+            color: #3a3a3a;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+        
+        body.dark-mode .section-title {
+            color: #ffffff;
+        }
+        
+        body.dark-mode .lead {
+            color: #cccccc;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, rgba(7, 248, 19, 0.8), rgba(78, 115, 223, 0.8));
+            transform: translateX(-50%);
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(163px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .member-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            position: relative;
+        }
+        
+        body.dark-mode .member-card {
+            background: rgba(51, 50, 50, 0.8);
+            box-shadow: 0 4px 12px rgba(165, 164, 164, 0.5);
+            border: 1px solid rgba(7, 248, 19, 0.24);
+        }
+        
+        .member-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            z-index: -1;
+            background: linear-gradient(135deg, rgba(7, 248, 19, 0.1), rgba(78, 115, 223, 0.1));
+            opacity: 0;
+            transition: opacity 0.1s ease;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(7, 248, 19, 0.2);
+        }
+        
+        body.dark-mode .member-card:hover {
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.993);
+            border-color: rgba(8, 196, 18, 0.986);
+        }
+        
+        .member-card:hover::before {
+            opacity: 1;
+        }
+        
+        .member-image {
+            height: 230px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .member-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to top, rgba(4, 236, 139, 0.836), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+        
+        body.dark-mode .member-image::after {
+            background: linear-gradient(to top, rgba(20, 20, 20, 0.9), transparent);
+        }
+        
+        .member-card:hover .member-image::after {
+            opacity: 1;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .member-card:hover .member-image img {
+            transform: scale(1.05);
+        }
+        
+        .member-info {
+            padding: 1rem;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+        
+        body.dark-mode .member-info {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .member-info h3 {
+            font-size: 0.9rem;
+            color: #4e73df;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .member-card:hover .member-info h3 {
+            color: rgb(7, 248, 19);
+        }
+        
+        .member-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+        }
+        
+        .member-card:hover .member-name {
+            color: #1a365d;
+        }
+        
+        body.dark-mode .member-info h3 {
+            color: #a3bffa;
+        }
+        
+        body.dark-mode .member-name {
+            color: #f0f4f8;
+        }
+        
+        body.dark-mode .member-card:hover .member-info h3 {
+            color: rgb(7, 248, 19);
+        }
+        
+        body.dark-mode .member-card:hover .member-name {
+            color: #ffffff;
+        }
+        
+        .member-contact {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+        
+        .contact-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(0);
+            transition: transform 0.3s ease;
+            border-radius: 50%;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .contact-btn:hover::before {
+            transform: scale(2);
+        }
+        
+        .contact-btn.whatsapp {
+            background-color: #25D366;
+        }
+        
+        .contact-btn.call {
+            background-color: #4e73df;
+        }
+        
+        body.dark-mode .contact-btn.call {
+            background-color: #3a54b4;
+        }
+        
+        .contact-btn i {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .members-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+            
+            .member-image {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .members-grid {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                padding: 1rem 0.5rem;
+                margin: 1.5rem -0.5rem 0;
+                gap: 1rem;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(7, 248, 19, 0.5) transparent;
+            }
+            
+            .members-grid::-webkit-scrollbar {
+                height: 12px;
+            }
+            
+            .members-grid::-webkit-scrollbar-track {
+                background: transparent;
+                margin: 0 1rem;
+            }
+            
+            .members-grid::-webkit-scrollbar-thumb {
+                background: rgba(7, 248, 19, 0.5);
+                border-radius: 10px;
+            }
+            
+            body.dark-mode .members-grid::-webkit-scrollbar-thumb {
+                background: rgba(7, 248, 19, 0.7);
+            }
+            
+            .member-card {
+                flex: 0 0 75%;
+                max-width: 280px;
+                scroll-snap-align: center;
+                margin-bottom: 0.5rem;
+            }
+            
+            .member-image {
+                height: 370px;
+            }
+            
+            /* Add scroll indication */
+            .container.position-relative::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                width: 30px;
+                height: 50px;
+                background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1));
+                border-radius: 0 5px 5px 0;
+                pointer-events: none;
+                opacity: 0.7;
+                animation: pulseRight 1.5s infinite;
+                z-index: 2;
+            }
+            
+            body.dark-mode .container.position-relative::after {
+                background: linear-gradient(to right, transparent, rgba(7, 248, 19, 0.15));
+            }
+            
+            @keyframes pulseRight {
+                0% { opacity: 0.3; width: 20px; }
+                50% { opacity: 0.7; width: 30px; }
+                100% { opacity: 0.3; width: 20px; }
+            }
+        }
+    </style>
+
+    <!-- Photos Section -->
+    <section id="photos" class="py-5">
+        <div class="gallery-bg"></div>
+        <div class="container position-relative">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-4 fw-bold text-primary mb-3">Photo Gallery</h2>
+                <p class="lead text-muted">Capturing moments of community service and celebrations</p>
+            </div>
+
+            <div class="gallery-row">
+                <!-- Traditional Ceremony -->
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-folder="traditional-ceremony">
+                    <div class="gallery-image-container">
+                        <img src="images/gallery/traditional-ceremony/main.jpg" alt="Traditional Ceremony">
+                        <div class="gallery-overlay">
+                            <h4>Traditional Ceremony</h4>
+                            <p>Experience the rich cultural heritage of our community</p>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Traditional Ceremony</h3>
+                        <p class="gallery-description">Join us in celebrating our cultural heritage with traditional rituals and ceremonies that bring our community together.</p>
+                        <div class="gallery-details">
+                            <div class="gallery-detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>Annual Event</span>
+                            </div>
+                            <div class="gallery-detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>500+ Attendees</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Camp -->
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-folder="medical-camp">
+                    <div class="gallery-image-container">
+                        <img src="images/gallery/medical-camp/main.jpg" alt="Medical Camp">
+                        <div class="gallery-overlay">
+                            <h4>Medical Camp</h4>
+                            <p>Providing healthcare services to our community</p>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Medical Camp</h3>
+                        <p class="gallery-description">Free medical check-ups and healthcare services provided by professional doctors to ensure community well-being.</p>
+                        <div class="gallery-details">
+                            <div class="gallery-detail-item">
+                                <i class="fas fa-stethoscope"></i>
+                                <span>Health Check</span>
+                            </div>
+                            <div class="gallery-detail-item">
+                                <i class="fas fa-hand-holding-medical"></i>
+                                <span>Free Medicine</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food Distribution -->
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-folder="food-distribution">
+                    <div class="gallery-image-container">
+                        <img src="images/gallery/food-distribution/main.jpg" alt="Food Distribution">
+                        <div class="gallery-overlay">
+                            <h4>Food Distribution</h4>
+                            <p>Supporting those in need with essential supplies</p>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Food Distribution</h3>
+                        <p class="gallery-description">Regular food distribution drives to support underprivileged families and ensure no one goes hungry.</p>
+                        <div class="gallery-details">
+                            <div class="gallery-detail-item">
+                                <i class="fas fa-utensils"></i>
+                                <span>Monthly Drive</span>
+                            </div>
+                            <div class="gallery-detail-item">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <span>1000+ Families</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Support -->
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-folder="education-support">
+                    <div class="gallery-image-container">
+                        <img src="images/gallery/education-support/main.jpg" alt="Education Support">
+                        <div class="gallery-overlay">
+                            <h4>Education Support</h4>
+                            <p>Empowering through education</p>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Education Support</h3>
+                        <p class="gallery-description">Providing educational resources, scholarships, and support to help students achieve their dreams.</p>
+                        <div class="gallery-details">
+                            <div class="gallery-detail-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Scholarships</span>
+                            </div>
+                            <div class="gallery-detail-item">
+                                <i class="fas fa-book"></i>
+                                <span>Study Materials</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Service -->
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-folder="community-service">
+                    <div class="gallery-image-container">
+                        <img src="images/gallery/community-service/main.jpg" alt="Community Service">
+                        <div class="gallery-overlay">
+                            <h4>Community Service</h4>
+                            <p>Making a difference in our community</p>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Community Service</h3>
+                        <p class="gallery-description">Various community service initiatives aimed at improving the quality of life for all residents.</p>
+                        <div class="gallery-details">
+                            <div class="gallery-detail-item">
+                                <i class="fas fa-hands-helping"></i>
+                                <span>Volunteer Work</span>
+                            </div>
+                            <div class="gallery-detail-item">
+                                <i class="fas fa-tree"></i>
+                                <span>Clean-up Drives</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volunteer Work -->
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-folder="volunteer-work">
+                    <div class="gallery-image-container">
+                        <img src="images/gallery/volunteer-work/main.jpg" alt="Volunteer Work">
+                        <div class="gallery-overlay">
+                            <h4>Volunteer Work</h4>
+                            <p>Dedicated volunteers making a difference</p>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Volunteer Work</h3>
+                        <p class="gallery-description">Our dedicated volunteers working tirelessly to support various community initiatives and programs.</p>
+                        <div class="gallery-details">
+                            <div class="gallery-detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>100+ Volunteers</span>
+                            </div>
+                            <div class="gallery-detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Regular Events</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="ganesh-puja-gallery.html" class="btn btn-primary gallery-btn">
+                    <i class="fas fa-images me-2"></i>View Ganesh Puja Gallery
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Gallery Section Styles */
+        #photos {
+            position: relative;
+            padding: 5rem 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e4f1fd, #d8e7fb);
+        }
+        
+        .gallery-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(78, 115, 223, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 30%, rgba(78, 115, 223, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 30% 70%, rgba(78, 115, 223, 0.1) 0%, transparent 15%),
+                radial-gradient(circle at 80% 80%, rgba(78, 115, 223, 0.15) 0%, transparent 20%);
+            z-index: 0;
+        }
+        
+        #photos::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(78, 115, 223, 0.2), rgba(78, 115, 223, 0.05));
+            z-index: 1;
+        }
+        
+        #photos::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(78, 115, 223, 0.2), rgba(78, 115, 223, 0.05));
+            z-index: 1;
+        }
+        
+        #photos .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .gallery-row {
+            display: flex;
+            overflow-x: auto;
+            padding: 1rem 0;
+            gap: 1.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: #4e73df #f8f9fc;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .gallery-row::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-row::-webkit-scrollbar-track {
+            background: rgba(248, 249, 252, 0.6);
+            border-radius: 4px;
+        }
+
+        .gallery-row::-webkit-scrollbar-thumb {
+            background-color: rgba(78, 115, 223, 0.7);
+            border-radius: 4px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            flex: 0 0 350px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(78, 115, 223, 0.3);
+        }
+
+        .gallery-image-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-content {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1.5rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-overlay p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .gallery-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-description {
+            color: #718096;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .gallery-details {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(226, 232, 240, 0.5);
+        }
+
+        .gallery-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4e73df;
+            font-size: 0.85rem;
+        }
+
+        .gallery-detail-item i {
+            font-size: 1rem;
+        }
+        
+        .gallery-btn {
+            background: linear-gradient(135deg, rgba(78, 115, 223, 0.9), rgba(78, 115, 223, 0.7));
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(78, 115, 223, 0.3);
+            box-shadow: 0 4px 15px rgba(78, 115, 223, 0.2);
+            padding: 8px 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(78, 115, 223, 0.3);
+            background: linear-gradient(135deg, rgba(78, 115, 223, 1), rgba(78, 115, 223, 0.8));
+        }
+
+        /* Dark mode styles */
+        body.dark-mode #photos {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+        }
+        
+        body.dark-mode .gallery-bg {
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(99, 134, 241, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 30%, rgba(99, 134, 241, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 30% 70%, rgba(99, 134, 241, 0.1) 0%, transparent 15%),
+                radial-gradient(circle at 80% 80%, rgba(99, 134, 241, 0.15) 0%, transparent 20%);
+        }
+
+        body.dark-mode .gallery-item {
+            background: rgba(45, 55, 72, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .gallery-content {
+            background: rgba(45, 55, 72, 0.2);
+        }
+
+        body.dark-mode .gallery-title {
+            color: #fff;
+        }
+
+        body.dark-mode .gallery-description {
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .gallery-details {
+            border-top-color: rgba(74, 85, 104, 0.5);
+        }
+
+        body.dark-mode .gallery-detail-item {
+            color: #a0aec0;
+        }
+        
+        body.dark-mode .gallery-row::-webkit-scrollbar-track {
+            background: rgba(45, 55, 72, 0.3);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex: 0 0 300px;
+            }
+
+            .gallery-image-container {
+                height: 200px;
+            }
+        }
+    </style>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 contact-section">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Contact Us</h2>
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="contact-info-card glass-card">
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Our Location</h4>
+                                <p>At- Banapur,Po-Basudebpur, Via-KuanPal,Dist-Cuttack,Odisha,Pin-754204</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone Numbers</h4>
+                                <p>+91 8455888617</p>
+                                <p>+91 8455888617</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Address</h4>
+                                <p>info@vinayakclub.org</p>
+                                <p>support@vinayakclub.org</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Working Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                <p>Saturday: 10:00 AM - 4:00 PM</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                        <div class="social-links mt-4">
+                            <h4>Follow Us</h4>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div class="col-lg-8">
+                    <div class="card glass-card">
+                        <div class="card-body">
+                            <form id="contactForm">
+                                <div class="row mb-3">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <input type="text" class="form-control glass-input" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control glass-input" placeholder="Your Email" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control glass-input" placeholder="Subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control glass-input" rows="5" placeholder="Your Message" required></textarea>
+                                </div>
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-primary glass-button">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Contact Section Glass Styles */
+        .contact-section {
+            position: relative;
+            background:linear-gradient(to right, #081724, #032338);
+            
+            background-size: cover;
+            padding: 100px 0;
+            color: #000000;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(1, 116, 247, 0.884), rgba(5, 38, 224, 0.3));
+            z-index: 0;
+        }
+        
+        .contact-section .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-section .section-title {
+            position: relative;
+            color: #000000;
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.973);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.473);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.014);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.486);
+            padding: 30px;
+            transition: all 0.1s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.918);
+        }
+        
+        .glass-input {
+            background: rgba(255, 255, 255, 0.041);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+        }
+        
+        .glass-input:focus {
+            background: rgba(255, 255, 255, 0);
+            border-color: rgba(78, 115, 223, 0.5);
+            box-shadow: 0 0 0 0.25rem rgba(2, 2, 2, 0.74);
+        }
+        
+        .glass-button {
+            background: linear-gradient(135deg, rgba(78, 115, 223, 0.9), rgba(78, 115, 223, 0.7));
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(78, 115, 223, 0.3);
+            box-shadow: 0 4px 15px rgba(78, 114, 223, 0.24);
+            padding: 8px 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .glass-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(78, 115, 223, 0.3);
+            background: linear-gradient(135deg, rgba(78, 115, 223, 1), rgba(78, 115, 223, 0.8));
+        }
+        
+        /* Dark mode adjustments */
+        body.dark-mode .contact-section {
+            color: #e2e8f0;
+        }
+        
+        body.dark-mode .contact-section::before {
+            background: linear-gradient(135deg, rgba(1, 30, 77, 0.7), rgba(30, 41, 59, 0.3));
+        }
+        
+        body.dark-mode .section-title {
+            color: #e2e8f0;
+        }
+        
+        body.dark-mode .glass-card {
+            background: rgba(246, 247, 248, 0.082);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .glass-input {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+        }
+        
+        body.dark-mode .glass-input:focus {
+            background: rgba(30, 41, 59, 0.7);
+        }
+        
+        body.dark-mode .contact-info-item {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 60px 0;
+            }
+            
+            .glass-card {
+                padding: 20px;
+            }
+        }
+    </style>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Vinayak Club</h5>
+                    <p>A registered society dedicated to community service and social welfare.</p>
+                    <p>Registration No: VCR-12345-2020</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Contact Information</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> At- Banapur,Po-Basudebpur, Via-KuanPal,Dist-Cuttack,Odisha,Pin-754204</p>
+                    <p><i class="fas fa-phone me-2"></i> +91 8455888617</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@vinayakclub.org</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Vinayak Club. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Join Modal -->
+    <div class="modal fade" id="joinModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Join Vinayak Club</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="joinForm">
+                        <div class="mb-3">
+                            <label for="joinName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="joinName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="joinEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="joinEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="joinPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="joinPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="joinAddress" class="form-label">Address</label>
+                            <textarea class="form-control" id="joinAddress" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="joinReason" class="form-label">Why do you want to join?</label>
+                            <textarea class="form-control" id="joinReason" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donate Modal -->
+    <div class="modal fade" id="donateModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Support Vinayak Club</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="donation-amounts mb-4">
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <input type="radio" class="btn-check" name="donation-amount" id="amount1" value="500" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary w-100" for="amount1">
+                                    <span class="amount">₹500</span>
+                                </label>
+                            </div>
+                            <div class="col-4">
+                                <input type="radio" class="btn-check" name="donation-amount" id="amount2" value="1000" autocomplete="off">
+                                <label class="btn btn-outline-primary w-100" for="amount2">
+                                    <span class="amount">₹1,000</span>
+                                </label>
+                            </div>
+                            <div class="col-4">
+                                <input type="radio" class="btn-check" name="donation-amount" id="amount3" value="5000" autocomplete="off">
+                                <label class="btn btn-outline-primary w-100" for="amount3">
+                                    <span class="amount">₹5,000</span>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <input type="radio" class="btn-check" name="donation-amount" id="amount4" value="custom" autocomplete="off">
+                                <label class="btn btn-outline-primary w-100" for="amount4">
+                                    <span class="amount">Custom Amount</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mt-3 custom-amount" style="display: none;">
+                            <div class="input-group">
+                                <span class="input-group-text">₹</span>
+                                <input type="number" class="form-control" id="customAmount" placeholder="Enter amount">
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="donationForm">
+                        <div class="mb-3">
+                            <label for="donateName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="donateName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="donateEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="donateEmail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="donatePhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="donatePhone" placeholder="Enter your phone number" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">
+                            <i class="fas fa-heart me-2"></i>Donate Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Member Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <div class="text-center mt-3">
+                            <a href="#" class="text-decoration-none">Forgot password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Member Sign Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signupForm">
+                        <div class="mb-3">
+                            <label for="signupName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="signupName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="signupEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="signupPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signupPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="signupConfirmPassword" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                            <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+
+    <script>
+    // Initialize LazyLoad
+    const myLazyLoad = new LazyLoad({
+        elements_selector: ".lazy"
+    });
+
+    // Improved mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add click event listeners to all nav-links to close the menu when clicked
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        
+        // Close menu when clicking on any nav link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.classList.remove('show');
+                }
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isNavbarCollapse = navbarCollapse.contains(event.target);
+            const isNavbarToggler = event.target.closest('.navbar-toggler');
+            
+            if (!isNavbarCollapse && !isNavbarToggler && navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
+        });
+    });
+
+    // Countdown Timer for Ganesh Puja
+    function updateGaneshPujaCountdown() {
+        // Set the date to August 27, 2025 at 8:00 AM
+        const ganeshPujaDate = new Date("August 27, 2025 08:00:00").getTime();
+        const now = new Date().getTime();
+        const timeLeft = ganeshPujaDate - now;
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("gp-days").innerHTML = days.toString().padStart(2, '0');
+        document.getElementById("gp-hours").innerHTML = hours.toString().padStart(2, '0');
+        document.getElementById("gp-minutes").innerHTML = minutes.toString().padStart(2, '0');
+        document.getElementById("gp-seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+        if (timeLeft < 0) {
+            clearInterval(countdownTimer);
+            document.querySelector(".countdown-container").innerHTML = "<h3 class='text-center'>Ganesh Puja Has Started!</h3>";
+        }
+    }
+
+    // Initial call and then update every second
+    updateGaneshPujaCountdown();
+    const countdownTimer = setInterval(updateGaneshPujaCountdown, 1000);
+
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('theme-toggle');
+    const mobileDarkModeToggle = document.getElementById('mobile-theme-toggle');
+    const body = document.body;
+    
+    // Check for saved user preference
+    const darkMode = localStorage.getItem('darkMode');
+    
+    // If dark mode was previously enabled, reapply it
+    if (darkMode === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+    
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    }
+    
+    // Add event listeners to both toggle buttons
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+    mobileDarkModeToggle.addEventListener('click', toggleDarkMode);
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const expandAllBtn = document.querySelector('.expand-all-btn');
+        let allExpanded = false;
+        
+        expandAllBtn.addEventListener('click', function() {
+            const allDetails = document.querySelectorAll('.activity-details');
+            
+            if (allExpanded) {
+                // Collapse all
+                allDetails.forEach(detail => detail.classList.remove('active'));
+                this.innerHTML = '<i class="fas fa-list"></i> Show All Activities';
+            } else {
+                // Expand all
+                allDetails.forEach(detail => detail.classList.add('active'));
+                this.innerHTML = '<i class="fas fa-minus"></i> Hide All Activities';
+            }
+            
+            allExpanded = !allExpanded;
+        });
+    });
+    </script>
+
+    <style>
+        /* Mobile-only Countdown Styles */
+        .mobile-countdown {
+            background: linear-gradient(1deg, #b60fb600, #2e59d9);
+            padding: 1rem 0;
+            margin: 0 0 2rem 0;
+            position: relative;
+            z-index: 1;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.966);
+            overflow: hidden;
+        }
+        
+        .mobile-countdown::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                        linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%),
+                        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%);
+            background-size: 20px 20px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        /* Enhanced mobile countdown background */
+        @media (max-width: 991px) {
+            .mobile-countdown {
+                background: linear-gradient(135deg, #000000, #0f1f38);
+                box-shadow: 0 10px 30px rgba(7, 248, 19, 0.3);
+                border: 1px solid rgba(7, 248, 19, 0.15);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .mobile-countdown::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                right: -50%;
+                bottom: -50%;
+                background: 
+                    radial-gradient(circle at 20% 30%, rgba(7, 248, 19, 0.15) 0, transparent 100px),
+                    radial-gradient(circle at 70% 70%, rgba(46, 89, 217, 0.15) 0, transparent 150px);
+                animation: rotateMobileBg 30s linear infinite;
+                z-index: -1;
+                opacity: 1;
+            }
+            
+            .mobile-countdown::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2307f813' fill-opacity='0.07' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3C/g%3E%3C/svg%3E");
+                opacity: 0.5;
+                z-index: -1;
+            }
+            
+            @keyframes rotateMobileBg {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            
+            .mobile-countdown-item {
+                background: rgba(0, 0, 0, 0.5);
+                border: 1px solid rgba(7, 248, 19, 0.4);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+            
+            .mobile-countdown-item:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 15px rgba(7, 248, 19, 0.4);
+                border-color: rgba(7, 248, 19, 0.6);
+            }
+            
+            .mobile-countdown-value {
+                text-shadow: 0 0 10px rgba(7, 248, 19, 0.5);
+                background: linear-gradient(45deg, #ffffff, #07f813);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            
+            .mobile-puja-date-flash {
+                background: rgba(0, 0, 0, 0.4);
+                border: 1px solid rgba(7, 248, 19, 0.3);
+                box-shadow: 0 0 20px rgba(7, 248, 19, 0.3);
+                animation: flashGreen 2s infinite;
+            }
+            
+            @keyframes flashGreen {
+                0% {
+                    box-shadow: 0 0 15px rgba(7, 248, 19, 0.3);
+                }
+                50% {
+                    box-shadow: 0 0 30px rgba(7, 248, 19, 0.7);
+                }
+                100% {
+                    box-shadow: 0 0 15px rgba(7, 248, 19, 0.3);
+                }
+            }
+            
+            .mobile-puja-date-flash::before {
+                background: rgba(7, 248, 19, 0.3);
+            }
+        }
+
+        .mobile-countdown-wrapper {
+            padding: 1rem;
+            text-align: center;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-countdown-wrapper {
+                padding: 0.75rem 0.5rem;
+            }
+            
+            .mobile-countdown-wrapper h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .mobile-countdown-container {
+                margin-bottom: 0.75rem;
+            }
+            
+            .mobile-puja-date-flash {
+                margin-top: 0.75rem;
+            }
+            
+            .mobile-countdown::before {
+                background-size: 15px 15px;
+            }
+        }
+
+        .mobile-countdown-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-countdown-item {
+            background: rgba(241, 9, 9, 0.1);
+            border: 1px solid rgba(163, 27, 218, 0.959);
+            border-radius: 12px;
+            padding: 0.6rem 0.3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .mobile-countdown-value {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 0.2rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(6, 207, 107, 0.322);
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .mobile-countdown-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .mobile-puja-date-flash {
+            background: rgba(121, 65, 65, 0.1);
+            border-radius: 12px;
+            padding: 0.8rem;
+            margin: 0.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            animation: flash 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mobile-puja-date-flash::before {
+            content: '';
+            position: absolute;
+            top: -0.8rem;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: rgba(255, 215, 0, 0.4);
+        }
+        
+        .mobile-date-container {
+            text-align: center;
+            color: white;
+        }
+        
+        .mobile-date-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        @keyframes flash {
+            0% {
+                box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+                background: rgba(255, 255, 255, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+                background: rgba(255, 215, 0, 0.2);
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        /* Only show the mobile countdown on mobile */
+        @media (min-width: 992px) {
+            .mobile-countdown {
+                display: none;
+            }
+        }
+        
+        /* Show the ganesh puja section on mobile and add better spacing */
+        @media (max-width: 768px) {
+            #ganeshpuja {
+                display: block !important;
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+            
+            #ganeshpuja .container > .mobile-countdown > .container {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            
+            /* Make the section more compact in mobile view */
+            #ganeshpuja .section-header {
+                margin-bottom: 1rem !important;
+            }
+            
+            #ganeshpuja .section-header h2 {
+                font-size: 1.8rem !important; 
+            }
+            
+            #ganeshpuja .row {
+                margin-top: 0;
+            }
+            
+            #ganeshpuja .ganesh-puja-image {
+                max-height: 250px;
+                overflow: hidden;
+                margin-bottom: 0 !important;
+            }
+            
+            #ganeshpuja .col-lg-6.mb-4 {
+                margin-bottom: 0.5rem !important;
+            }
+            
+            #ganeshpuja .row.align-items-center {
+                margin-top: 0.5rem !important;
+            }
+            
+            #ganeshpuja .ganesh-puja-content {
+                padding: 0.75rem;
+                margin-top: 0.5rem;
+            }
+            
+            #ganeshpuja .countdown-wrapper {
+                padding: 0.75rem;
+                margin-top: 0.5rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            #ganeshpuja .ganesh-puja-info p {
+                font-size: 0.95rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            #ganeshpuja .countdown-wrapper .countdown-box {
+                padding: 0.5rem 0.75rem !important;
+                margin: 0 0.25rem !important;
+            }
+        }
+    </style>
+
+    <script>
+        // Update mobile countdown in the Ganesh Puja section
+        function updateMobileGaneshPujaCountdown() {
+            // Set the date to August 27, 2025 at 8:00 AM
+            const ganeshPujaDate = new Date("August 27, 2025 08:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = ganeshPujaDate - now;
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            if (document.getElementById("mobile-gp-days")) {
+                document.getElementById("mobile-gp-days").innerHTML = days.toString().padStart(2, '0');
+                document.getElementById("mobile-gp-hours").innerHTML = hours.toString().padStart(2, '0');
+                document.getElementById("mobile-gp-minutes").innerHTML = minutes.toString().padStart(2, '0');
+                document.getElementById("mobile-gp-seconds").innerHTML = seconds.toString().padStart(2, '0');
+  
+                if (timeLeft < 0) {
+                    clearInterval(mobileCountdownTimer);
+                    document.querySelector(".mobile-countdown-container").innerHTML = "<h3 class='text-center'>Ganesh Puja Has Started!</h3>";
+                }
+            }
+        }
+  
+        // Declare the timer variable in the outer scope
+        let mobileCountdownTimer;
+        
+        // Make sure the DOM is loaded before initializing the countdown
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if the required elements exist
+            if (document.getElementById("mobile-gp-days")) {
+                // Initial call and then update every second for mobile countdown
+                updateMobileGaneshPujaCountdown();
+                mobileCountdownTimer = setInterval(updateMobileGaneshPujaCountdown, 1000);
+            }
+        });
+    </script>
+
+    <style>
+        /* Dark mode styles */
+        body.dark-mode .mobile-countdown {
+            background: linear-gradient(145deg, #1f5dc7, #051025);
+        }
+        
+        body.dark-mode .mobile-countdown-item {
+            background: rgba(247, 247, 247, 0.24);
+            border-color: rgba(56, 44, 44, 0.1);
+        }
+        
+        body.dark-mode .mobile-puja-schedule {
+            background: rgba(14, 34, 126, 0.6);
+        }
+        
+        body.dark-mode .mobile-puja-date-flash {
+            background: rgba(142, 143, 146, 0.178);
+            border-color: rgba(255, 215, 0, 0.4);
+        }
+        
+        body.dark-mode .mobile-puja-date-flash::before {
+            background: rgba(255, 215, 0, 0.5);
+        }
+    </style>
+
+    <style>
+        /* Mobile Puja Schedule Styles */
+        .mobile-puja-schedule {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+        
+        .mobile-puja-schedule h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .mobile-puja-schedule h4:after {
+            content: '';
+            position: absolute;
+            bottom: -0.3rem;
+            left: 30%;
+            right: 30%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .mobile-schedule-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+        }
+        
+        .mobile-schedule-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .mobile-schedule-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .mobile-schedule-list li i {
+            margin-right: 0.5rem;
+            width: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .mobile-schedule-list li span {
+            font-weight: 600;
+            margin-right: 0.3rem;
+        }
+        
+        .mobile-download-btn {
+            display: block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+            padding: 0.6rem;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .mobile-download-btn i {
+            margin-right: 0.5rem;
+        }
+        
+        /* Dark mode styles for mobile puja schedule */
+        body.dark-mode .mobile-puja-schedule {
+            background: rgba(14, 34, 126, 0.6);
+        }
+    </style>
+    
+    <script>
+        // Ensure Ganesh Puja section is hidden on mobile devices
+        document.addEventListener('DOMContentLoaded', function() {
+            function hideGaneshPujaOnMobile() {
+                var ganeshSection = document.getElementById('ganeshpuja');
+                if (window.innerWidth < 576 && ganeshSection) {
+                    ganeshSection.style.display = 'none';
+                    ganeshSection.style.visibility = 'hidden';
+                } else if (ganeshSection) {
+                    ganeshSection.style.display = 'block';
+                    ganeshSection.style.visibility = 'visible';
+                }
+            }
+            
+            // Run on page load
+            hideGaneshPujaOnMobile();
+            
+            // Run whenever window is resized
+            window.addEventListener('resize', hideGaneshPujaOnMobile);
+            
+            // Update countdown for the mobile-only Ganesh Puja card
+            function updateMobileCardCountdown() {
+                // Set the date to August 27, 2025 at 8:00 AM
+                const ganeshPujaDate = new Date("August 27, 2025 08:00:00").getTime();
+                const now = new Date().getTime();
+                const timeLeft = ganeshPujaDate - now;
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                // Update the mobile-only card countdown
+                if (document.getElementById("mobile-gpcard-days")) {
+                    document.getElementById("mobile-gpcard-days").innerHTML = days.toString().padStart(2, '0');
+                    document.getElementById("mobile-gpcard-hours").innerHTML = hours.toString().padStart(2, '0');
+                    document.getElementById("mobile-gpcard-minutes").innerHTML = minutes.toString().padStart(2, '0');
+                    document.getElementById("mobile-gpcard-seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+                    if (timeLeft < 0) {
+                        clearInterval(mobileCardCountdownTimer);
+                        document.querySelector("#mobile-ganesh-puja-card .mobile-countdown-container").innerHTML = 
+                            "<h3 class='text-center'>Ganesh Puja Has Started!</h3>";
+                    }
+                }
+            }
+            
+            // Initial call and then update every second for mobile card countdown
+            updateMobileCardCountdown();
+            const mobileCardCountdownTimer = setInterval(updateMobileCardCountdown, 1000);
+        });
+    </script>
+
+    <!-- Gallery Modal -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Images will be loaded dynamically -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-center mb-0">
+                        
+                        <small>Designed with <i class="fas fa-heart text-danger"></i> by <a href="https://www.google.com" target="_blank" class="text-primary">Dipak K Behera</a></small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    
+    <!-- jQuery script for the Puja Details toggle -->
+    <script>
+        $(document).ready(function() {
+            var detailsVisible = false;
+            
+            // Force hide initially to ensure consistent state
+            $('#pujaDetailsContent').hide();
+            
+            // Puja details toggle functionality
+            $('#pujaDetailsBtn').on('click', function(e) {
+                // Prevent any default action or event bubbling
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Store button and content elements
+                var $button = $(this);
+                var $content = $('#pujaDetailsContent');
+                
+                // Toggle visibility with smooth transitions
+                if (detailsVisible) {
+                    // First fade out slightly, then slide up for smoother transition
+                    $content.animate({opacity: 0.7}, 150, function() {
+                        $content.slideUp(250, 'easeOutQuad', function() {
+                            $content.removeClass('active');
+                            $button.html('<i class="fas fa-info-circle me-2"></i>More Details');
+                            detailsVisible = false;
+                        });
+                    });
+                } else {
+                    // First slide down, then fade in for smooth appearance
+                    $content.slideDown(300, 'easeOutCubic', function() {
+                        $content.addClass('active').css('opacity', 0).animate({opacity: 1}, 200);
+                        $button.html('<i class="fas fa-minus-circle me-2"></i>Hide Details');
+                        detailsVisible = true;
+                        
+                        // Optional: Smooth scroll to ensure the content is visible
+                        if($content.offset().top < $(window).scrollTop() || 
+                           $content.offset().top + $content.height() > $(window).scrollTop() + $(window).height()) {
+                            $('html, body').animate({
+                                scrollTop: $content.offset().top - 100
+                            }, 300);
+                        }
+                    });
+                }
+                
+                // Return false to ensure the event is completely stopped
+                return false;
+            });
+            
+            // Prevent clicks inside the content from closing it
+            $('#pujaDetailsContent').on('click', function(e) {
+                e.stopPropagation();
+            });
+            
+            // Add a class to document to track when document is ready
+            $('body').addClass('js-loaded');
+        });
+    </script>
+</body>
+</html>
